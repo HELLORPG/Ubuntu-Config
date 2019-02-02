@@ -12,6 +12,7 @@ command就是要执行的命令，可以是任意的shell命令。
 `当prerequisites中有一个或者多个文件比target文件要新的话，才会执行command的命令`  
 </br>
 
+
 ## 2.
 
 
