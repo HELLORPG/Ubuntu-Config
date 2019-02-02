@@ -29,6 +29,26 @@ clean:
   rm main main.o xxx.o xxx.o ......
 ```
 如上的部分是对应指令`make clean`，通过shell指令删除编译生成的文件。  
+</br>
+
+
+## 3.Makefile中使用变量：
+如，可以用一个变量表示所有的*.o文件：  
+```makefile
+object = main.o xxx.o xxx.o \
+  xxx.o ......
+```
+其中，符号`\`是一个延续换行符，即使视觉上换行，但是逻辑上仍然属于一行的内容。  
+之后可以使用已经定义的变量进行Makefile相关的语句进行编写：  
+```makefile
+main: $(object)
+  g++ -o main $(object)
+  
+clean: 
+  rm main $(object)
+```
+如上通过`$(变量)`的方式来使用已经定义的变量。  
+</br>
 
 
 
