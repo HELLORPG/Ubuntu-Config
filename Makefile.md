@@ -9,7 +9,10 @@ target ... : prerequisites ... </br>
 这里的target是一个目标文件，是这个步骤所需要生成的。（但也不全是如此）  
 而prerequisites是一个依赖列表，生成target的过程需要问文件。  
 command就是要执行的命令，可以是任意的shell命令。  
+`当prerequisites中有一个或者多个文件比target文件要新的话，才会执行command的命令`  
+</br>
 
+## 2.
 
 
 
