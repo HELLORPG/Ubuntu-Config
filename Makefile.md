@@ -13,8 +13,22 @@ command就是要执行的命令，可以是任意的shell命令。
 </br>
 
 
-## 2.
-
+## 2.C/C++程序的制定文件编译：
+```makefile
+main: main.o xxx.o xxx.o ......
+  g++ -o main main.o xxx.o xxx.o ......
+```
+如上的部分可以通过链接已经编译好的各个*.o文件来链接生成可执行文件main。  
+```makefile
+xxx.o: xxx.h xxx.cpp
+  g++ -c xxx.h xxx.cpp
+```
+如上的部分可以将对应需要的头文件和源文件合并编译，生成对应的*.o文件。
+```makefile
+clean:
+  rm main main.o xxx.o xxx.o ......
+```
+如上的部分是对应指令`make clean`，通过shell指令删除编译生成的文件。  
 
 
 
