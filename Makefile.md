@@ -17,4 +17,4 @@ target ... : prerequisites ... </br>
 
 
 
-*参考链接：[](https://seisman.github.io/how-to-write-makefile/introduction.html#id1 "Makefile介绍")  
+*[参考链接](https://seisman.github.io/how-to-write-makefile/introduction.html#id1 "Makefile介绍")  
