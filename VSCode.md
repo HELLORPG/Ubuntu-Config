@@ -5,4 +5,4 @@
 >> 首选项
 >>> 设置
 >>>> files.autoGuessEncoding -> True
-
+`version 1.30.2`
