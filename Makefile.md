@@ -23,7 +23,8 @@ main: main.o xxx.o xxx.o ......
 xxx.o: xxx.h xxx.cpp
   g++ -c xxx.h xxx.cpp
 ```
-如上的部分可以将对应需要的头文件和源文件合并编译，生成对应的*.o文件。
+如上的部分可以将对应需要的头文件和源文件合并编译，生成对应的*.o文件。  
+`虽然可以列出.h文件，但是事实上，如果只给出.cpp，g++也会根据#include中的文件列表链接相应的.h文件`  
 ```makefile
 clean:
   rm main main.o xxx.o xxx.o ......
