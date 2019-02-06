@@ -92,7 +92,6 @@ objects := $(wildcard *.o)
 ```
 </br>
 
-
 类似的方法，可以得到一个确定的文件夹中的所有.cpp文件如下：
 ```makefile
 objects := $(wildcard *.c)
@@ -105,7 +104,7 @@ $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 ```makefile
 objects := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 main : $(objects)
-  g++ -o foo $(objects)
+  g++ -o main $(objects)
 ```
 对于上述的`wildcard`和`patsubst`两个属于Makefile的关键词，具体的部分叙述可以在如下链接中看到一部分：   
 * [函数关键词的部分描述](https://seisman.github.io/how-to-write-makefile/functions.html "关键词描述")  
