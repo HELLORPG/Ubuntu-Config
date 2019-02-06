@@ -50,6 +50,7 @@ clean:
   rm main $(object)
 ```
 如上通过`$(变量)`的方式来使用已经定义的变量。  
+`另外，需要注意，在makefile中的变量其实类似于C/C++中的宏，所以不会展开，而是带入所有的使用变量的地方`  
 </br>
 
 
@@ -71,6 +72,42 @@ clean :
 一般大家都习惯将clean指令放到makefile文件的最后，是一个不成文的规矩。  
 </br>
 
+
+## 5.在Makefile中使用通配符（类似于正则表达）：
+1. `~`在文件名中有特殊的用途，与`cd ~`的意义类似，是当前用户的`home`目录。  
+2. `*`如同正则表达式中的作用，是一个通配符，如`*.cpp`代表所有的cpp文件。  
+如最常见的：
+```makefile
+clean:
+  rm -f *.o
+```
+但是需要注意如果进行如下的表示：
+```makefile
+objects = *.o
+```
+其中的`*.o`不会展开。  
+如果你需要让通配符在变量中展开，也就是让objects的值是所有的.o文件的集合，那你需要：
+```makefile
+objects := $(wildcard *.o)
+```
+</br>
+类似的方法，可以得到一个确定的文件夹中的所有.cpp文件如下：
+```makefile
+objects := $(wildcard *.c)
+```
+对于上述的所有.cpp文件，我们可以找出对应的.o文件，方法如下：
+```makefile
+$(patsubst %.cpp,%.o,$(wildcard *.cpp))
+```
+通过如上的铺垫，可以写出编译并且链接所有.cpp和.o文件的指令如下：
+```makefile
+objects := $(patsubst %.cpp,%.o,$(wildcard *.cpp))
+main : $(objects)
+  g++ -o foo $(objects)
+```
+对于上述的`wildcard`和`patsubst`两个属于Makefile的关键词，具体的部分叙述可以在如下链接中看到一部分：  
+*[函数关键词的部分描述](https://seisman.github.io/how-to-write-makefile/functions.html "关键词描述")  
+</br>
 
 
 
