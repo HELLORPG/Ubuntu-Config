@@ -30,6 +30,7 @@ clean:
   rm main main.o xxx.o xxx.o ......
 ```
 如上的部分是对应指令`make clean`，通过shell指令删除编译生成的文件。  
+`但是需要注意，gcc/g++编译器会对.h头文件进行预处理，生成同名的.h.gch文件，用于快速编译，最好在clean中也对这个文件进行删除`  
 </br>
 
 
