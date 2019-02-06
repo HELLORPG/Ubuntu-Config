@@ -106,7 +106,7 @@ main : $(objects)
   g++ -o foo $(objects)
 ```
 对于上述的`wildcard`和`patsubst`两个属于Makefile的关键词，具体的部分叙述可以在如下链接中看到一部分：  
-*[函数关键词的部分描述](https://seisman.github.io/how-to-write-makefile/functions.html "关键词描述")  
+* [函数关键词的部分描述](https://seisman.github.io/how-to-write-makefile/functions.html "关键词描述")  
 </br>
 
 
@@ -117,4 +117,4 @@ main : $(objects)
 
 
 
-*[参考链接](https://seisman.github.io/how-to-write-makefile/introduction.html#id1 "Makefile介绍")  
+* [参考链接](https://seisman.github.io/how-to-write-makefile/introduction.html#id1 "Makefile介绍")  
