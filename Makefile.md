@@ -53,6 +53,26 @@ clean:
 </br>
 
 
+## 4.对于清空文件的规则叙述：
+如上所述，在使用变量的情况下可以使用如下的语句进行清空：
+```makefile
+clean:
+  rm main $(objects)
+```
+但是更稳健的做法是：
+```makefile
+.PHONY : clean
+clean :
+  -rm main $(objects)
+```
+这里的`.PHONY`表示`clean`是一个“伪目标”。  
+而在`rm`命令前面加一个减号的意思是，如果某些文件出现问题，也不用管，而继续执行。  
+`clean命令不要放在makefile文件的开头，否则会成为默认的目标`  
+一般大家都习惯将clean指令放到makefile文件的最后，是一个不成文的规矩。  
+</br>
+
+
+
 
 
 
